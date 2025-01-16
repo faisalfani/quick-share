@@ -5,9 +5,7 @@ export default function Index() {
   const randomBG = () => {
     const bgList = [
       "beach.jpg",
-      "ice.jpg",
       "tokyo_night.jpg",
-      "mirage.jpg"
     ]
     return bgList[Math.floor(Math.random() * bgList.length)];
   }
@@ -56,10 +54,11 @@ export default function Index() {
       method: 'POST',
       body: formData,
     });
+    console.log('called',response)
     const blob = await response.json()
     .catch((error) => {
       alert('Error: ' + error);
-      window.location.reload();
+      // window.location.reload();
     });
 
     setBlob(blob);
